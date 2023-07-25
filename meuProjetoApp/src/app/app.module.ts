@@ -7,19 +7,33 @@ import { HeaderComponent } from './header/header.component';
 import { IndexComponent } from './index/index.component';
 import {HomeComponent} from "./home/home.component";
 import {MatIconModule} from "@angular/material/icon";
+import { CommentsComponent } from './comments/comments.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatButtonModule} from "@angular/material/button";
+import {FormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+    CommentsComponent,
+    ApresentacaoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatIconModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatIconModule,
+        MatCardModule,
+        MatGridListModule,
+        MatButtonModule,
+        FormsModule,
+        MatInputModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

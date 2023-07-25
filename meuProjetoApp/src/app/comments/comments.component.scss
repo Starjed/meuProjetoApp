@@ -1,0 +1,11 @@
+.valor {
+  height: 100px;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

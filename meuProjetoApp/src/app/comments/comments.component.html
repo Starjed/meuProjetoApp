@@ -1,0 +1,25 @@
+<ng-container>
+  <label class="mb-2">Insira o seu nome:</label>
+  <input class="w-100" [(ngModel)]="name">
+
+  <label class="mb-2">Insira um comentário sobre o que você achou:</label>
+  <textarea class="valor w-100 flex-grow-1 d-flex" [(ngModel)]="value"></textarea>
+  <div class="d-flex justify-content-end mt-4">
+    <button type="button" class="btn btn-danger me-2">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="enviaComment()">Enviar</button>
+  </div>
+</ng-container>
+
+<div class="card-wrapper bg-body-secondary mt-4">
+  <mat-card class="example-card border" *ngFor="let comment of comments">
+    <mat-card-header class="card-header">
+      <mat-card-title-group>
+        <mat-card-title>{{comment.name}}</mat-card-title>
+        <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      {{comment.text}}
+    </mat-card-content>
+  </mat-card>
+</div>
