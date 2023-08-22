@@ -1,17 +1,23 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {map, toArray} from "rxjs";
+import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
+import {User} from "../models/User";
 
 export interface Comments {
   text: string;
   name: string;
 }
 
+
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss']
 })
-export class CommentsComponent {
+export class CommentsComponent implements OnInit{
+
+  constructor(private auth: AuthService, private router: Router) {
+  }
 
   value = '';
   name = ''
@@ -37,4 +43,10 @@ export class CommentsComponent {
       this.value = '';
     }
   }
+
+  logout() {
+    this.auth.logout()
+    this.router.navigate(['/login'])
+  }
+
 }
