@@ -17,12 +17,11 @@ export class RegisterComponent {
 
   isSuccessful = false;
   isSignUpFailed = false;
-  errorMessage = '';
+  errorMessage = 'Failed';
 
   register() {
     this.auth.register(this.name, this.email, this.password).subscribe(
       (data) => {
-        console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
       },
