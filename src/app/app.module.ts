@@ -14,6 +14,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule} from "@angular/common/http";
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
     HomeComponent,
     IndexComponent,
     CommentsComponent,
-    ApresentacaoComponent
+    ApresentacaoComponent,
+    LoginComponent,
+    RegisterComponent
   ],
     imports: [
         BrowserModule,
@@ -32,7 +37,8 @@ import { ApresentacaoComponent } from './apresentacao/apresentacao.component';
         MatGridListModule,
         MatButtonModule,
         FormsModule,
-        MatInputModule
+        MatInputModule,
+        HttpClientModule
     ],
   providers: [],
   bootstrap: [AppComponent]
