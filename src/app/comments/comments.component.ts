@@ -14,7 +14,7 @@ export interface Comments {
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss']
 })
-export class CommentsComponent implements OnInit{
+export class CommentsComponent {
 
   constructor(private auth: AuthService, private router: Router) {
   }
