@@ -8,7 +8,7 @@ import {Token} from "@angular/compiler";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   constructor(
     private auth: AuthService, private router: Router) {
@@ -20,12 +20,17 @@ export class LoginComponent {
   isSignUpFailed = false;
   errorMessage = 'Failed';
 
+  ngOnInit() {
+    if (this.auth.getToken() != null) {
+      this.router.navigate(['/home'])
+    }
+  }
 
   login() {
     this.auth.login(this.email, this.password).subscribe(
       () => {
         localStorage.setItem('jwt_token', this.auth.getToken()!!);
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
       },
       (err) => {
         this.errorMessage = err.error.message;
